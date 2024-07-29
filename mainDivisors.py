@@ -1,0 +1,41 @@
+def get_positiveinteger():
+    #Function to get a valid positive integer from the user
+    while True:
+        try:
+            #continuously prompt the user for input until a valid integer is entered
+            numeral = int(input("Enter a positive integer: "))
+            #prompt the user to enter a positive integer
+            if numeral > 0:
+                return numeral
+                #Return the valid integer if it is positive
+            else:
+                print(
+                    "The number must be a positive integer. Please try again.")
+                #Prompt the user to enter a valid number
+        except ValueError:
+            print("Invalid input. Please enter a positive integer.")
+            #deals with non-integer values
+
+
+def number_ofdivisors(n):
+    #Function to find the number of positive divisors of a given number n.
+    #if n <= 0:
+    #check if the input number is not a positive integer
+
+    count = 0
+    #start a counter to zero
+    for i in range(1, n + 1):
+        #Loop through all integers from 1 to n (inclusive)
+        if n % i == 0:
+        #Check if i divides n without leaving a remainder
+            count += 1
+            #Increment the counter if the condition is met
+    return count
+    #Return the count of divisors
+
+
+#Example
+n = get_positiveinteger()
+#get a valid positive integer from the user
+print(f"Number of divisors of {n}: {number_ofdivisors(n)}")
+#print the number of divisors
